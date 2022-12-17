@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" language="java" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="276815dc-5e9a-4b3d-b446-a0b2dce1452f">
+	<property name="ireport.zoom" value="1.5000000000000024"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="fecha_inicio" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="fecha_fin" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select row_number() over (order by to_char(t1.hora_fecha_salida, 'YYYY-MM-DD')), t3.descripcion_ca, t4.descripcion_se, sum(t1.precio_total) as acumulado, to_char(t1.hora_fecha_salida, 'YYYY-MM-DD') as fecha
+from pedido t1 inner join detalle t2 on t1.codigo_solicitud = t2.codigo_solicitud inner join categoria t3 on t2.codigo_ca = t3.codigo_ca 
+inner join servicio t4 on t4.codigo_se=t2.codigo_se
+ where t1.hora_fecha_salida > $P!{fecha_inicio} and t1.hora_fecha_salida < $P!{fecha_fin}
+group by t4.codigo_se, t3.codigo_ca, to_char(t1.hora_fecha_salida, 'YYYY-MM-DD') order by to_char(t1.hora_fecha_salida, 'YYYY-MM-DD') asc]]>
+	</queryString>
+	<field name="row_number" class="java.lang.Long"/>
+	<field name="descripcion_ca" class="java.lang.String"/>
+	<field name="descripcion_se" class="java.lang.String"/>
+	<field name="acumulado" class="java.lang.Long"/>
+	<field name="fecha" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="79" y="0" width="402" height="79" uuid="d8ba286a-ac2f-464f-980a-5bcc2471e682"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="24"/>
+				</textElement>
+				<text><![CDATA[Resumen de servicios por fechas]]></text>
+			</staticText>
+			<textField pattern="EEE, d MMM yyyy HH:mm:ss Z">
+				<reportElement x="401" y="0" width="116" height="20" uuid="25af583c-be83-44b4-9b6f-4df56a03ce73"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="13" y="14" width="100" height="50" uuid="8a632793-9378-40f2-a8f2-6f6ff505f652"/>
+                                <imageExpression><![CDATA["wash.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="3" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="66" height="20" uuid="ec8eefb8-406f-4a36-ace9-72be46d88c63"/>
+				<text><![CDATA[Codigo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="66" y="0" width="132" height="20" uuid="b77f9ff0-d9a3-46e3-94b1-bfac953cc629"/>
+				<text><![CDATA[Categoria]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="198" y="0" width="162" height="20" uuid="f22a6ab6-8d5e-4bf9-a8a7-cfb1f729e940"/>
+				<text><![CDATA[Servicio]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="360" y="0" width="95" height="20" uuid="c1bb6fbf-80cf-4595-a279-598ec3bba962"/>
+				<text><![CDATA[Monto Total]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="455" y="0" width="100" height="20" uuid="01ee21b5-170f-48ac-b74f-235a514a91fe"/>
+				<text><![CDATA[Fecha]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="18" width="555" height="1" uuid="a74fb27a-6289-4007-be92-aaa1421e429c"/>
+			</line>
+			<textField>
+				<reportElement x="66" y="0" width="132" height="20" uuid="10d13eb2-92bd-4ca0-8144-05d0d2f63686"/>
+				<textFieldExpression><![CDATA[$F{descripcion_ca}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="198" y="0" width="162" height="20" uuid="6c966c2a-1a24-47bf-b7e1-f69e94e0fbaf"/>
+				<textFieldExpression><![CDATA[$F{descripcion_se}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="360" y="0" width="95" height="20" uuid="54808603-ef4a-4172-9895-e6527bdc914a"/>
+				<textFieldExpression><![CDATA[$F{acumulado}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="455" y="0" width="100" height="20" uuid="0c9b21f6-e286-4dd2-b45a-512818594301"/>
+				<textFieldExpression><![CDATA[$F{fecha}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="66" height="20" uuid="3fff87dc-4e54-418f-8205-0e9bb5dd71c8"/>
+				<textFieldExpression><![CDATA[$F{row_number}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="2" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="38" splitType="Stretch">
+			<textField>
+				<reportElement x="214" y="11" width="80" height="20" uuid="207f7986-ccef-436a-a094-9d4ca2c4fd49"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="294" y="11" width="40" height="20" uuid="02da8938-23b5-46ca-aff8-2b8f35cf0aaa"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="3" splitType="Stretch"/>
+	</summary>
+</jasperReport>

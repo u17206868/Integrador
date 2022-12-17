@@ -1,0 +1,81 @@
+@charset "ISO-8859-1";
+body{
+    background-color: rgb(225, 225, 225);
+    background-size: cover;
+    background-repeat:no-repeat;
+    background-position: center;
+    font-family: 'Lato', sans-serif;
+    height: 100%;
+    /*url(http://129.151.111.223:8080/fondo.jpg)*/
+    /*https://png.pngtree.com/background/20210710/original/pngtree-simple-atmospheric-appliance-washing-machine-poster-picture-image_1012170.jpg*/
+}
+.tablaClientes{
+    display: inline-block;
+    position: relative;
+    min-height: 100vh;
+    top: 0;
+    left: 78px;
+    width: calc(100% - 78px);
+    transition: all 0.5s ease;
+    z-index: 2;
+}
+.tablaClientes{
+    position: relative;
+    min-height: 100vh;
+    top: 0;
+    left: 78px;
+    width: calc(100% - 78px);
+    transition: all 0.5s ease;
+    z-index: 2;
+}
+.lateralBar.open ~ .tablaClientes{
+    left: 270px;
+    width: calc(100% - 250px);
+}
+.tablaClientes .text{
+    display: inline-block;
+    color: teal;
+    font-size: 25px;
+    font-weight: 500;
+    margin: 18px
+}
+.container-table{
+    width: 90%;
+    background: white;
+    box-shadow: 0 0 20px #333;
+    margin: 50px auto;
+    display: grid;
+    grid-template-columns: repeat(4, 2fr);
+    grid-auto-rows: 50px;
+}
+.table-title{
+    grid-column-start: 1;
+    grid-column-end: 6;
+    background: linear-gradient(90deg, rgb(88, 0, 0) 15%, rgb(216, 3, 3) 50%,rgb(88, 0, 0) 100%);
+    color: rgb(255, 183, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.9em;
+}
+.table-header, .table-item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.table-header{
+    font-weight: bold;
+    font-size: 1.2em;
+}
+.table-item{
+    padding: 10px;
+    font-size: 1em;
+}
+.clientee{
+	font-size: 22px;
+	font-weight: bold;
+	border:none;
+	margin-top: 20px;
+	transition: background-color .3s ease-in-out;
+}

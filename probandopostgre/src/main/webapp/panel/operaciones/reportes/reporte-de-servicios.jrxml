@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="java" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b6406386-b803-4738-885d-6de3bac11f2d">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="codigo_se" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="fecha_inicio" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="fecha_fin" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT t1.codigo_solicitud, t2.descripcion_ca, t3.descripcion_se, t5.hora_fecha_salida  FROM detalle t1 INNER JOIN categoria t2 ON t1.codigo_ca=t2.codigo_ca INNER JOIN servicio t3 ON t1.codigo_se=t3.codigo_se
+ INNER JOIN prendas t4 ON t1.codigo_prenda=t4.codigo_prenda INNER JOIN pedido t5 ON t1.codigo_solicitud=t5.codigo_solicitud
+ WHERE t5.hora_fecha_salida > $P!{fecha_inicio} and t5.hora_fecha_salida < $P!{fecha_fin} and t3.codigo_se=$P!{codigo_se} order by t1.codigo_detalle asc]]>
+	</queryString>
+	<field name="codigo_solicitud" class="java.lang.Integer"/>
+	<field name="descripcion_ca" class="java.lang.String"/>
+	<field name="descripcion_se" class="java.lang.String"/>
+	<field name="hora_fecha_salida" class="java.sql.Timestamp"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="88" y="0" width="394" height="79" uuid="d890e7d6-6d4c-4699-8e42-5431e74fd39d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="24"/>
+				</textElement>
+				<text><![CDATA[Reporte de servicios por categorías y tipos de servicio]]></text>
+			</staticText>
+			<image>
+				<reportElement x="17" y="15" width="96" height="50" uuid="6a54d383-cb25-441a-a674-a8146fd5ebb7"/>
+				<imageExpression><![CDATA["wash.png"]]></imageExpression>
+			</image>
+			<textField pattern="EEE, d MMM yyyy HH:mm:ss Z">
+				<reportElement x="399" y="0" width="132" height="20" uuid="1f8b9b5a-7d47-4707-824d-0d597b868e03"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="5" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="23" splitType="Stretch">
+			<staticText>
+				<reportElement x="52" y="2" width="100" height="20" uuid="209dc373-8ead-4a55-b24f-1057d02bfc1e"/>
+				<text><![CDATA[Codigo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="173" y="2" width="100" height="20" uuid="ab48eb9e-c992-4c16-a2ae-ecd78a003c62"/>
+				<text><![CDATA[Categoria]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="299" y="2" width="100" height="20" uuid="21afb649-1cee-4640-a347-3ef912493235"/>
+				<text><![CDATA[Servicio]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="432" y="2" width="100" height="20" uuid="284274fe-fe76-4271-9a9e-5c137c5741c0"/>
+				<text><![CDATA[Fecha]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<textField>
+				<reportElement x="52" y="1" width="100" height="20" uuid="231f4291-389a-43bf-86b0-41cfdd0c2fd1"/>
+				<textFieldExpression><![CDATA[$F{codigo_solicitud}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="299" y="0" width="100" height="20" uuid="9073348b-a98e-43d2-a7eb-5fecda1fafde"/>
+				<textFieldExpression><![CDATA[$F{descripcion_se}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="414" y="0" width="141" height="20" uuid="a6082085-4a6c-4beb-837b-c05f10f6cdba"/>
+				<textFieldExpression><![CDATA[$F{hora_fecha_salida}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="173" y="1" width="100" height="20" uuid="ec88dd78-189b-45f4-9cd9-05333e0dee7a"/>
+				<textFieldExpression><![CDATA[$F{descripcion_ca}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="1" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="21" splitType="Stretch">
+			<textField>
+				<reportElement x="207" y="0" width="80" height="20" uuid="8a8a0ca3-362b-48db-8296-609f546b1473"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="287" y="0" width="40" height="20" uuid="6b072b87-c215-420d-9dfa-ab493af3a27a"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="4" splitType="Stretch"/>
+	</summary>
+</jasperReport>

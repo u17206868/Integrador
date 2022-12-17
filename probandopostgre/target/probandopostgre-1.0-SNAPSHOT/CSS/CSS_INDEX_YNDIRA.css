@@ -1,0 +1,587 @@
+html{
+    font-family: 'Lato', sans-serif;
+}
+body{
+    margin: 0;
+    background: linear-gradient(90deg, rgb(88, 0, 0) 15%, rgb(216, 3, 3) 50%,rgb(88, 0, 0) 100%);
+    padding: 0%;
+    width: 100%;
+}
+
+footer{
+    background-color: #001803;
+    color: white;
+    text-align: left;
+    
+}
+footer table{
+    margin-left: 10%;    
+}
+/*CONFIGURACIÓN DE BLOQUES*/
+.logo{
+    display: inline-block;
+    padding: 0;
+    width: 50%;
+    margin-bottom: 0px;
+}
+
+.presentacion_pizza{
+    height: 500px;
+    background: rgba( 0, 0, 0, 0.8);
+    background-image: url(https://lavadorasindustriales.mx/wp-content/uploads/2020/02/Lavanderia-2.png);
+    background-size: cover;
+    background-repeat:no-repeat;
+    background-position: center;
+}
+.bloque1{
+    background: rgb(0, 0, 0);
+    color: rgb(255, 183, 0);
+    width: 450px;
+    height: 150px;
+    display: inline-block;
+    margin-left: 0;
+}
+.bloque2{
+    background: rgb(0, 0, 0);
+    color: rgb(255, 183, 0);
+    width: 450px;
+    height: 150px;
+    display: inline-block;
+    margin-left: 0;
+}
+.bloque3{
+    background: rgb(0, 0, 0);
+    color: rgb(255, 183, 0);
+    width: 448px;
+    height: 150px;
+    display: inline-block;
+    margin-left: 0;
+}
+.restaurante_general{
+    color: white;
+    height: 450px;
+    width: 100%;
+    background-image: url(../IMG/IMG_SHARON/fondo_cev.png);
+    background-size:100%;
+    background-repeat:no-repeat;
+    background-position: center;
+    margin-top: 0%;
+    margin-bottom: 0%;
+    display: inline-block;
+    vertical-align: auto;    
+}
+.restaurante_general h1 h2 p{
+    margin-top: 20%;
+}
+.que_ofrecemos{
+    background: black;
+    color: rgb(255, 183, 0);
+    display: inline-block;
+    vertical-align: auto; 
+    height: 430px;
+    width: 1400px;
+}
+
+.porque_elegirnos{
+    background: linear-gradient(90deg, rgb(88, 0, 0) 15%, rgb(216, 3, 3) 50%,rgb(88, 0, 0) 100%);
+    color:rgb(255, 183, 0);
+    text-shadow: 0.1em 0.1em 0.2em black;
+    display: inline-block;
+    vertical-align: auto; 
+    height: 180px;
+    width: 1400px;
+}
+.catalogo{
+    display: block;
+    background-image: url(https://i.pinimg.com/564x/77/42/0d/77420df3f9e33db5b79ee25455d3340e.jpg);
+    background-size:100%;
+    background-repeat:no-repeat;
+    background-position: center;
+    color:rgb(255, 183, 0);
+    text-shadow: 0.1em 0.1em 0.2em rgb(249, 1, 1);
+}
+.contacto{
+    background: linear-gradient(90deg, rgb(88, 0, 0) 15%, rgb(216, 3, 3) 50%,rgb(88, 0, 0) 100%);
+    color:rgb(255, 183, 0);
+}
+/*CONFIGURACION DE IMAGENES*/
+#logotipo{
+    width: 20%;
+    position: relative;
+    top: 0px;
+    left: 90%;
+    bottom: 0px;
+}
+.lavadoras{
+    width: 6%;
+    position: relative;
+    top: 10%;
+    left:70%;
+    bottom: 60%;
+}
+.check{
+    position: relative;
+    top: 20%;
+    left: 66%;
+}
+.mensaje{
+    position: relative;
+    top: 0;
+    left: 65%;
+    color: #fff;
+}
+.mapa{
+    position: relative;
+    top: 0;
+    left: 94%;
+}
+.telefono{
+    position: relative;
+    top: 5%;
+    left: 113%;
+}
+
+.ceviche{
+	overflow: hidden;
+	height: 300px;
+	position: relative;
+    margin-left: 30%;
+	border-radius: 20px;
+    transition: all 0.5s;
+}
+.ceviche:hover {
+	transform: scale(1.2);
+}
+.chicharron{
+    width: 80%;
+    position: relative;
+    top: 0;
+    right: -15%;
+}
+.chicharron{
+	overflow: hidden;
+	height: 300px;
+	position: relative;
+    margin-left: 60%;
+	border-radius: 20px;
+    transition: all 0.5s;
+}
+.chicharron:hover {
+	transform: scale(1.2);
+}
+.motocicleta{
+    position: relative;
+    left: 15%;
+}
+.manos{
+    position: relative;
+    left: 35%;
+}
+.estrella{
+    position: relative;
+    left: 55%;
+}
+.cubiertos2{
+    position: relative;
+    left: 75%;
+}
+.telefono2{
+ position: relative;   
+ left: -15%;
+}
+.mensaje2{
+    position: relative;
+    left: 24%;
+}
+.wpp{
+    position: relative;
+    left: 35%;
+}
+.ceviche_peruanoimg{
+    width: 50%;
+    position: relative;
+    left: 20%;
+    border-radius: 20px;
+    transition: all 0.5s;
+}
+.ceviche_peruanoimg:hover{
+	transform: scale(1.1);
+}
+.arros_mariscos{
+    width: 60%;
+    position: relative;
+    left: 10%;
+    border-radius: 20px;
+    transition: all 0.5s;
+}
+.arros_mariscos:hover {
+	transform: scale(1.1);
+}
+.triple{
+    width: 60%;
+    position: relative;
+    left: 10%;
+    border-radius: 20px;
+    transition: all 0.5s;
+}
+.triple:hover {
+	transform: scale(1.1);
+}
+.sudado{
+    width: 50%;
+    position: relative;
+    left: 20%;
+    border-radius: 20px;
+    transition: all 0.5s;
+}
+.sudado:hover {
+	transform: scale(1.1);
+}
+.chicharron_pescado{
+    width: 60%;
+    position: relative;
+    left: 10%;
+    border-radius: 20px;
+    transition: all 0.5s;
+}
+.chicharron_pescado:hover {
+	transform: scale(1.1);
+}
+.chicharron_calamar{
+    width: 60%;
+    position: relative;
+    left: 10%;
+    border-radius: 20px;
+    transition: all 0.5s;
+}
+.chicharron_calamar:hover {
+	transform: scale(1.1);
+}
+.chicharron_chancho{
+    width: 50%;
+    position: relative;
+    left: 20%;
+    border-radius: 20px;
+    transition: all 0.5s;
+}
+.chicharron_chancho:hover {
+	transform: scale(1.1);
+}
+.chicharron_pollo{
+    width: 60%;
+    position: relative;
+    left: 10%;
+    border-radius: 20px;
+    transition: all 0.5s;
+}
+.chicharron_pollo:hover {
+	transform: scale(1.1);
+}
+.arroz_pato{
+    width: 60%;
+    position: relative;
+    left: 10%;
+    border-radius: 20px;
+    transition: all 0.5s;
+}
+.arroz_pato:hover {
+	transform: scale(1.1);
+}
+.pollada{
+    width: 50%;
+    position: relative;
+    left: 20%;
+    border-radius: 20px;
+    transition: all 0.5s;
+}
+.pollada:hover {
+	transform: scale(1.1);
+}
+
+
+/*CONFIGURACION DE BOTONES*/
+.login{
+    background-color: aqua;
+    position: relative;
+    top: 18%;
+    left: 33%;
+    height: 30px;
+    box-shadow: 2px 2px 5px rgba( 0, 0, 0, .8) ;
+    transition: all .3s ease-in-out;
+    height: 30px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+.login:hover{
+    box-shadow: 0 0 30px #cddc39;
+    color: #001803;
+    }
+.mantenimiento_listas{
+    background: linear-gradient(90deg, rgb(165, 0, 0) 15%, rgb(216, 3, 3) 50%,rgb(165, 0, 0) 100%);
+    color: #ffae00;
+    position: relative;
+    top: 18%;
+    left: 67%;
+    height: 30px;
+    box-shadow: 2px 2px 5px rgba( 0, 0, 0, .8) ;
+    transition: all .3s ease-in-out;
+    height: 30px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+.mantenimiento_listas:hover{
+    box-shadow: 0 0 30px #cddc39;
+    color: #ffffff;
+}
+.registrarse_c{
+    background-color: #cddc39;
+    position: auto;
+    margin-top: 5%;
+    height: 30px;
+    box-shadow: 2px 2px 5px rgba( 0, 0, 0, .8) ;
+    transition: all .3s ease-in-out;
+    height: 30px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+.registrarse_c:hover{
+    box-shadow: 0 0 30px black;
+    color: #001803;
+}
+/*CONFIGURACION DE INFORMACION*/
+.tabla_opciones{
+    border-collapse: separate;
+    border-spacing: 10% 5px;
+    border-right-color: #001803;
+}
+#expertos_en{
+    position: relative;
+    color: #ffae00;
+    text-shadow: 0.1em 0.1em 0.2em black;
+    top: 10%;
+    left: 68%;
+    bottom: 60%;
+}
+#pizzas_artesanas{
+    position: relative;
+    top: 10%;
+    left: 56%;
+    bottom: 60%;
+    color: #ffae00;
+    text-shadow: 0.1em 0.1em 0.2em black;
+}
+.enviano_correo{
+    position: relative;
+    top: 0;
+    left: 45%;
+}
+.elcorreo{
+    position: relative;
+    bottom: 0;
+    left: 25%;
+}
+.visitanos_en{
+    position: relative;
+    bottom: 0;
+    left: 80%;
+}
+.calle12{
+    position: relative;
+    bottom: 0;
+    text-align: center;
+    left: 55%;
+}
+.contactenos{
+    position: relative;
+    bottom: 0;
+    left: 95%;
+}
+.numeros{
+    position: relative;
+    bottom: 0;
+    left: 75%;
+}
+#titulo_restaurante{
+    margin-top: 5%;
+    margin-bottom: 2%;
+    position: relative;
+    bottom: 0;
+    text-align: center; 
+    animation-delay: 2s;
+    color: #ffae00;
+    text-shadow: 0.1em 0.1em 0.2em black;
+}
+#quienes_somos{
+    margin-bottom: 3%;
+    color: #000000;
+    text-shadow: 0.1em 0.1em 0.2em black;
+    position: relative;
+    bottom: 0;
+    text-align: center;
+    animation-delay: 2s;
+}
+.informacion_p{
+    margin-bottom: 3%;
+    text-align: center;
+    animation: pulse;
+    animation-delay: 2s;
+    animation-duration: 3s;
+    color: #ffae00;
+    text-shadow: 0.1em 0.1em 0.2em black;
+}
+#titulo_ofrecemos{
+    color: #ffae00;
+    position: relative;
+    top: 3%;
+    text-align: center;
+    animation-delay: 4s;
+}
+#titulo_elegirnos{
+    text-align: center;
+    color:rgb(255, 183, 0);
+    text-shadow: 0.1em 0.1em 0.2em black;
+    animation-delay: 6s;
+}
+.delivery{
+    position: relative;
+    left: -3%;
+}
+.variedadP{
+    position: relative;
+    left: 11%;
+}
+.ambienteA{
+    position: relative;
+    left: 6%;
+}
+.atencionP{
+    position: relative;
+    left: 2%;
+}
+#titulo_contacto{
+    text-align: center;
+    color:rgb(255, 183, 0);
+    top: 5%;
+    animation-delay: 10s;
+}
+.numero2{
+    position: relative;
+    left: -15%;
+}
+.email{
+    position: relative;
+    left: -7%;
+}
+.wpp2{
+    position: relative;
+    left: 4%;
+}
+#titulo_catalogo{
+    text-align: center;
+    color:rgb(255, 183, 0);
+    animation-delay: 8s;
+}
+.titulo_cp{
+    text-align: left;
+    position: relative;
+    left: -3%;
+}
+.titulo_sudado{
+    text-align: left;
+    position: relative;
+    left: -3%;
+}
+.titulo_chicharronCh{
+    text-align: left;
+    position: relative;
+    left: -3%;
+}
+.titulo_pollada{
+    text-align: left;
+    position: relative;
+    left: -3%;
+}
+.titulo_am{
+    text-align: left;
+    position: relative;
+    left: -3%;
+}
+.titulo_chicharronP{
+    text-align: left;
+    position: relative;
+    left: -3%;
+}
+.titulo_chicharronPo{
+    text-align: left;
+    position: relative;
+    left: -3%;
+}
+.titulo_triple{
+    text-align: left;
+    position: relative;
+    left: -3%;
+}
+.titulo_chicharronC{
+    text-align: left;
+    position: relative;
+    left: -3%;
+}
+.titulo_arrozP{
+    text-align: left;
+    position: relative;
+    left: -3%;
+}
+.lista_servicios{
+    text-align: left;
+    position: relative;
+    left: 100%;
+    animation: pulse;
+    animation-delay: 4s;
+    animation-duration: 3s;
+}
+
+nav{
+    
+    background-color:black;
+    margin-top: 0%;
+    width: 100%;
+    height: 58px;
+    float:center; /* Desplazamos el nav hacia la izquierda */
+}
+nav ul{
+    margin-left: 300px;
+    list-style: none;
+    overflow: hidden; /* Limpiamos errores de float */
+}
+nav ul li {
+    float:left;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
+  
+nav ul li a{
+    display: block; /* Convertimos los elementos a en elementos bloque para manipular el padding */
+    padding: 20px;
+    color: #ffae00;
+    text-decoration: none;
+}
+  
+nav ul li:hover {
+    background: linear-gradient(90deg, rgb(147, 42, 0) 15%, rgb(218, 40, 0) 50%,rgb(147, 42, 0) 100%);
+}
+.wrapper {
+    margin-top: 0px;
+    width: 100%;
+    margin: auto;
+    overflow:hidden;
+    
+  }

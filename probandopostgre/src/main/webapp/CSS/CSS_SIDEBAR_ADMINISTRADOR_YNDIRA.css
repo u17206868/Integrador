@@ -1,0 +1,281 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins" , sans-serif;
+}
+.lateralBar{
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 78px;
+  background: linear-gradient(90deg, rgb(153, 0, 0) 15%, rgb(204, 0, 0) 50%,rgb(255, 0, 0) 100%);
+  padding: 6px 14px;
+  z-index: 99;
+  transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+}
+.lateralBar.open{
+  width: 270px;
+}
+.lateralBar .restauranteLogo{
+  height: 50px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.lateralBar .restauranteLogo .icon{
+  opacity: 0;
+  transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+}
+.lateralBar .restauranteLogo .nombreLogo{
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  opacity: 0;
+  transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+}
+.lateralBar.open .restauranteLogo .icon,
+.lateralBar.open .restauranteLogo .nombreLogo{
+  opacity: 1;
+}
+.lateralBar .restauranteLogo #menu_btn{
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  font-size: 22px;
+  transition: all 0.4s ease;
+  font-size: 23px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+}
+.lateralBar.open .restauranteLogo #menu_btn{
+  text-align: right;
+}
+.lateralBar i{
+  color: #fff;
+  height: 60px;
+  min-width: 50px;
+  font-size: 28px;
+  text-align: center;
+  line-height: 60px;
+}
+.lateralBar img{
+  height: 35px;
+  min-width: 50px;
+  font-size: 28px;
+  text-align: center;
+  line-height: 60px;
+}
+.lateralBar .listaBar{
+  margin-top: 5px;
+  height: 100%;
+}
+.lateralBar li{
+  position: relative;
+  margin: 8px 0;
+  list-style: none;
+}
+.lateralBar li .flotanteText{
+  position: absolute;
+  top: -20px;
+  left: calc(100% + 15px);
+  z-index: 3;
+  background: linear-gradient(90deg, rgb(153, 0, 0) 15%, rgb(204, 0, 0) 50%,rgb(255, 0, 0) 100%);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  color: rgba(230,230,230,1);
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: 400;
+  opacity: 0;
+  white-space: nowrap;
+  pointer-events: none;
+  transition: 0s;
+}
+.lateralBar li:hover .flotanteText{
+  opacity: 1;
+  pointer-events: auto;
+  transition: all 0.4s ease;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.lateralBar.open li .flotanteText{
+  display: none;
+}
+.lateralBar input{
+  font-size: 15px;
+  color: #11101D;
+  font-weight: 400;
+  outline: none;
+  height: 50px;
+  width: 100%;
+  width: 50px;
+  border: none;
+  border-radius: 12px;
+  transition: all 0.5s ease;
+  background: rgba(230,230,230,1);
+}
+.lateralBar.open input{
+  padding: 0 20px 0 50px;
+  width: 100%;
+}
+.lateralBar .bx-search-alt{
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  font-size: 20px;
+  background: rgba(230,230,230,1);
+  color: #11101D;
+}
+.lateralBar.open .bx-search-alt:hover{
+  background: rgba(230,230,230,1);
+  color: #11101D;
+}
+.lateralBar .bx-search-alt:hover{
+  background: rgba(230,230,230,1);
+  color: #11101D;
+}
+.lateralBar li a{
+  display: flex;
+  height: 100%;
+  width: 100%;
+  border-radius: 12px;
+  align-items: center;
+  text-decoration: none;
+  transition: all 0.4s ease;
+  background: rgb(127, 255, 212,0.3);
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  -ms-border-radius: 12px;
+  -o-border-radius: 12px;
+}
+.lateralBar li a:hover{
+  background: rgba(230,230,230,1);
+}
+.lateralBar li a .nombreLinks{
+  color: #fff;
+  font-size: 15px;
+  font-weight: 400;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.4s;
+}
+.lateralBar.open li a .nombreLinks{
+  opacity: 1;
+  pointer-events: auto;
+}
+.lateralBar li a:hover .nombreLinks,
+.lateralBar li a:hover i{
+  transition: all 0.5s ease;
+  color: #11101D;
+}
+.lateralBar li i{
+  height: 50px;
+  line-height: 50px;
+  font-size: 18px;
+  border-radius: 12px;
+}
+.lateralBar li.perfil{
+  position: fixed;
+  height: 55px;
+  width: 78px;
+  left: 0;
+  bottom: -8px;
+  padding: 10px 14px;
+  background: linear-gradient(90deg, rgb(153, 0, 0) 15%, rgb(204, 0, 0) 50%,rgb(255, 0, 0) 100%);
+  transition: all 0.5s ease;
+  overflow: hidden;
+}
+.lateralBar.open li.perfil{
+  width: 270px;
+}
+.lateralBar li .detallesPerfil{
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+.lateralBar li img{
+  height: 45px;
+  width: 45px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-right: 10px;
+}
+.lateralBar li.perfil .nombreUser,
+.lateralBar li.perfil .rolUser{
+  font-size: 15px;
+  font-weight: 400;
+  color: #fff;
+  white-space: nowrap;
+}
+.lateralBar li.perfil .rolUser{
+  font-size: 12px;
+}
+.lateralBar .perfil #logOut{
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  background: linear-gradient(90deg, rgb(153, 0, 0) 15%, rgb(204, 0, 0) 50%,rgb(255, 0, 0) 100%);
+  width: 100%;
+  height: 55px;
+  line-height: 60px;
+  border-radius: 0px;
+  transition: all 0.5s ease;
+}
+.lateralBar.open .perfil #logOut{
+  width: 50px;
+  background: none;
+}
+.seccionPantalla{
+  position: relative;
+  background: #E4E9F7;
+  min-height: 100vh;
+  top: 0;
+  left: 78px;
+  width: calc(100% - 78px);
+  transition: all 0.5s ease;
+  z-index: 2;
+}
+.lateralBar.open ~ .seccionPantalla{
+  left: 270px;
+  width: calc(100% - 250px);
+}
+.seccionPantalla .text{
+  display: inline-block;
+  color: teal;
+  font-size: 25px;
+  font-weight: 500;
+  margin: 18px
+}
+@media (max-width: 420px) {
+  .lateralBar li .flotanteText{
+    display: none;
+  }
+}
+.banner{
+  width: 100%;
+  height: 80%;
+}
